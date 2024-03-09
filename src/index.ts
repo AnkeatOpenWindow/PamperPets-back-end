@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { DataSource } from 'typeorm';
-import { Lecturer } from './entity/lecturer';
+import { Location } from './entity/location';
 import AppDataSource from './datasource';
 import inventoryRouter from './routes/inventoryRoute';
 //import ormconfig from '../ormconfig.json';
@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 app.get('/users', async (req, res) => { // add async
     const users = await appDataSource // add await
-    .manager.find(Lecturer)
+    .manager.find(Location)
 
     // find = get
    //use the managing capabilities to find all my lecturer items
@@ -41,7 +41,7 @@ app.get('/users/:id', async (req, res) =>{
     //appDataSource = connection to the db
     //getRepository = specifity the entity we want to connect to
     //gets = findBy / findOneBy / find
-    const user = await appDataSource.getRepository(Lecturer)
+    const user = await appDataSource.getRepository(Location)
     .findOneBy({id:id}); // findOneBy = singel where and return 1
 
     res.send(user)
