@@ -6,10 +6,13 @@ export class Location {
     id: number = 0
 
     @Column({length:225})
-    adress: string = "placeholder"
+    name: string = "placeholder"
 
     @Column({length:225})
-    email: string = "email@gemail.com"
+    adress: string = "placeholder"
+
+    @Column()
+    icon!: string;
 
     
 }

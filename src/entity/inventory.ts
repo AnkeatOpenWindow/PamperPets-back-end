@@ -13,9 +13,6 @@ export class Inventory {
     name!: string;
 
     @Column()
-    category!: string;
-
-    @Column()
     icon!: string;
 
     @Column()
