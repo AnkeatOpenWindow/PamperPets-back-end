@@ -1,6 +1,7 @@
 // Todo: 
-
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Ingredients } from "./ingredients";
+import { OneToMany } from "typeorm";
 
 
 @Entity()
@@ -29,5 +30,6 @@ export class Inventory {
     //amount: number;  
 
 
-
+    @OneToMany(() => Ingredients, (ingredients: Ingredients) => ingredients.inventory)
+    public inventoryToCraftables?: Ingredients[];
 }

@@ -5,6 +5,7 @@ import { Location } from './entity/location';
 import AppDataSource from './datasource';
 import inventoryRouter from './routes/inventoryRoute';
 import locationRouter from './routes/locationRoute';
+import recipeRouter from './routes/recipeRoute';
 //import ormconfig from '../ormconfig.json';
 const cors = require('cors');
 const app = express();
@@ -52,7 +53,7 @@ app.get('/', (req, res) => {
 // IMPORT ENDPORTS
 app.use('/inventory', inventoryRouter);
 app.use('/location', locationRouter);
-//app.use('/recipe', recipeRouter);
+app.use('/recipe', recipeRouter);
 //app.use('/users', userRouter)
 
 app.listen(process.env.PORT, () => {
