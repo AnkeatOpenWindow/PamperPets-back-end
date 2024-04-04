@@ -17,6 +17,9 @@ export class Recipe{
     @Column ()
     amountCrafted!: number
 
+    
+    
+
     //recipe can have an array of ingredients from ingredient entity
     @OneToMany(() => Ingredients, ingredients => ingredients.recipe)
     ingredients?: Ingredients[]
