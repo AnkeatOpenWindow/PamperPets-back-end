@@ -1,5 +1,6 @@
 import { Column, Entity, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Inventory } from "./inventory";
+import { Recipe } from "./recipe";
 
 @Entity()
 export class Location {
@@ -18,5 +19,7 @@ export class Location {
     
     @OneToMany(() => Inventory, (inventory: Inventory) => inventory.location)
     public inventory?: Inventory[];
-    
+
+    @OneToMany(() => Recipe, (recipe: Recipe) => recipe.location)
+    public recipe?: Recipe[];
 }

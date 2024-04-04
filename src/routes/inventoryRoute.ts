@@ -9,9 +9,9 @@ const appDataSource = AppDataSource
 //todo: create CRUD
 
 // Get all Inventory item
-inventoryRouter.get("/", async (req, res) => {
+inventoryRouter.get("/:locationId", async (req, res) => {
     try {
-        const { locationId } = req.body; // Retrieve locationId from query parameters
+        const  locationId  = + req.params.locationId; // Retrieve locationId from query parameters
 
         const items = await appDataSource
             .getRepository(Inventory).createQueryBuilder("inventory")
