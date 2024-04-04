@@ -1,7 +1,8 @@
 // TODO, recipe enity
 
-import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Ingredients } from "./ingredients";
+import { Location } from "./location";
 
 @Entity()
 export class Recipe{
@@ -17,11 +18,15 @@ export class Recipe{
     @Column ()
     amountCrafted!: number
 
-    
+    @Column({nullable:true})
+    locationId?: number;
     
 
     //recipe can have an array of ingredients from ingredient entity
     @OneToMany(() => Ingredients, ingredients => ingredients.recipe)
     ingredients?: Ingredients[]
 
+    @ManyToOne(() => Location, (location: Location) => location.recipe)
+    @JoinColumn()
+    public location?: Location;
 }
