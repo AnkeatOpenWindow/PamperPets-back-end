@@ -6,7 +6,7 @@ const AppDataSource = new DataSource(
         "host": "localhost",
         "port": 5432,
         "username": "postgres",
-        "password": "12345",
+        "password": "1234",
         "database": "pamperpets_db",
         "entities": ["src/entity/**"],
         "logging": true,

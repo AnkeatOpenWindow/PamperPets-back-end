@@ -2,10 +2,12 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { DataSource } from 'typeorm';
 import { Location } from './entity/location';
+import { User } from './entity/user';
 import AppDataSource from './datasource';
 import inventoryRouter from './routes/inventoryRoute';
 import locationRouter from './routes/locationRoute';
 import recipeRouter from './routes/recipeRoute';
+import userRouter from './routes/userRoute';
 //import ormconfig from '../ormconfig.json';
 const cors = require('cors');
 const app = express();
@@ -54,7 +56,7 @@ app.get('/', (req, res) => {
 app.use('/inventory', inventoryRouter);
 app.use('/location', locationRouter);
 app.use('/recipe', recipeRouter);
-//app.use('/users', userRouter)
+app.use('/users', userRouter)
 
 app.listen(process.env.PORT, () => {
   console.log('Server is listening on port 3000');
