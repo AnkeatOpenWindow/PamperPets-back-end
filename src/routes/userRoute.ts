@@ -36,11 +36,11 @@ userRouter.post("/" , async (req, res) =>{
 userRouter.post('/login', async (req, res) => {
     try {
 
-        const { email, password } = req.body;
+        const { username, password } = req.body;
 
-        if(email && password){
+        if(username && password){
 
-            let userRequest = await appDataSource.getRepository(User).findOneBy({email: email})
+            let userRequest = await appDataSource.getRepository(User).findOneBy({username: username})
 
             if(!userRequest){
                 return res.status(404).json({message: "No User Found"})
