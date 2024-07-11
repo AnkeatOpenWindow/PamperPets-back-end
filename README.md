@@ -82,12 +82,12 @@ Enter `https://github.com/AnkeatOpenWindow/PamperPets-back-end.git` into the URL
 2. Clone Repository </br>
 Run the following in the command-line to clone the project:
    ```sh
-   git clone https://github.com/AnkeatOpenWindow/PamperPets-front-end.git
+   git clone https://github.com/AnkeatOpenWindow/PamperPets-back-end.git
    ```
     Open `GitHub Desktop` and select `File | Open...` from the menu. Select cloned directory and press `Open in Visual Studio Code` button
 
 3. Run backend server </br>
-Run the following in the front-end command-line:
+Run the following in the backend command-line:
    ```sh
    npm run dev
    ```
