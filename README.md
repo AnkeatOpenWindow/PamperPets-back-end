@@ -86,14 +86,14 @@ Run the following in the command-line to clone the project:
    ```
     Open `GitHub Desktop` and select `File | Open...` from the menu. Select cloned directory and press `Open in Visual Studio Code` button
 
-3. Run back-end server </br>
+3. Run backend server </br>
 Run the following in the front-end command-line:
    ```sh
    npm run dev
    ```
 
-4. Run frontend server </br>
-Get backend at [https://github.com/AnkeatOpenWindow/PamperPets-front-end](https://github.com/AnkeatOpenWindow/PamperPets-front-end)
+4. Run front-end server </br>
+Get front-end at [https://github.com/AnkeatOpenWindow/PamperPets-front-end](https://github.com/AnkeatOpenWindow/PamperPets-front-end)
    ```sh
    npm start
    ```
